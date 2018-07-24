@@ -16,10 +16,10 @@ class TakeTextInput extends Component {
   isFilledColor = () => this.setState({ isFilled: true });
   render() {
     return (
-      <View style={(this.isFilledColor) ? PageStyles.lightBlueFill : PageStyles.lightOrangeFill }>
+      <View style={(this.isFilledColor) ? PageStyles.lightOrangeFill : PageStyles.lightBlueFill }>
         <TextInput
           placeholder={this.props.placeholderText}
-          onChangeText={this.isFilledColor()}
+          onSubmitEditing = {() => this.setState({isFilled: true})}
         />
       </View>
     )
